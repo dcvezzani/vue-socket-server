@@ -11,12 +11,14 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "http": "0.0.0",
     "jade": "~1.11.0",
     "knex": "^0.14.2",
     "knex-migrate": "^1.5.1",
     "morgan": "~1.9.0",
     "orm": "^4.0.2",
     "serve-favicon": "~2.4.5",
+    "socket.io": "^2.0.4",
     "sqlite3": "^3.1.13"
   }
 }

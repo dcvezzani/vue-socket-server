@@ -10,11 +10,6 @@ var users = require('./routes/users');
 
 var app = express();
 
-var models = require('./db');
-// new models.User({name: "Dave", description: "cest moi"}).save().then((user) => {
-//   console.log("added: " + user);
-// });
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
