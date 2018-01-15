@@ -1,0 +1,4 @@
+.*.sw*
+.sw*
+*.sqlite3
+node_modules/
