@@ -73,9 +73,10 @@ module.exports = function(server) {
       
     // days
 
-    socket.on('fetch_day', function(day){
+    socket.on('fetch_day', function(day, callback){
       new models.Day({id: day.id}).fetch().then((model) => {
-        io.emit('day_fetched', {action: 'get', type: 'day', model: model});
+        let data = {action: 'get', type: 'day', model: model, callback: callback};
+        io.emit('day_fetched', data);
       })
     });
     
