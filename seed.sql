@@ -1,0 +1,10 @@
+insert into users (name, freeDay, freeMeal, sickDay) values ('Dave', 0, 0, 0);
+insert into weeks (userId, freebieFood) values (1, 0);
+insert into days (weekId, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+insert into days (weekId, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+insert into days (weekId, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+insert into days (weekId, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+insert into days (weekId, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+insert into days (weekId, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+insert into days (weekId, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+insert into days (weekId, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
