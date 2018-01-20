@@ -2,6 +2,9 @@ exports.up = async function(knex) {
   await knex.schema.createTable("days", function(t) {
     t.increments('id').primary();
     t.integer('weekId');
+    t.text('wholeDate');
+    t.text('month');
+    t.integer('day');
     t.integer('positiveFood');
     t.text('positiveFoodData');
     t.integer('negativeFood');

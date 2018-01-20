@@ -73,6 +73,13 @@ module.exports = function(server) {
       
     // days
 
+    socket.on('fetch_calendar', function(month_id, callback){
+      models.Day.where({month: month_id}).fetchAll().then((collection) => {
+        let data = {action: 'get', type: 'calendar', collection: collection, callback: callback};
+        io.emit('calendar_fetched', data);
+      })
+    });
+    
     socket.on('fetch_day', function(day, callback){
       new models.Day({id: day.id}).fetch().then((model) => {
         let data = {action: 'get', type: 'day', model: model, callback: callback};
