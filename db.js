@@ -42,6 +42,10 @@ var Day = bookshelf.Model.extend({
   tableName: 'days'
 });
 
+var SimplePerson = bookshelf.Model.extend({
+  tableName: 'simple_people'
+});
+
 // var user = new User({name: "Bob", description: "Somebody new"});
 // user.save().then((model) => {
 //   console.log("saved user: " + JSON.stringify(model));
@@ -50,5 +54,5 @@ var Day = bookshelf.Model.extend({
 
 // #############################################
 
-module.exports = {User: User, Week: Week, Day: Day}
+module.exports = {User: User, Week: Week, Day: Day, SimplePerson: SimplePerson}
 

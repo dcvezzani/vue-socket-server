@@ -67,6 +67,11 @@ insert into days (weekId, wholeDate, month, day, positiveFood, negativeFood, fru
 insert into days (weekId, wholeDate, month, day, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (8, '2018-03-02 00:00:00.000', 'Mar 2018', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 insert into days (weekId, wholeDate, month, day, positiveFood, negativeFood, fruitsVegetables, water, waterCupsCnt, after8, exercise, dailyGreatness, personalPrayer, scriptureStudy) values (8, '2018-03-03 00:00:00.000', 'Mar 2018', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
+insert into simple_people (name, details, points) values ('Joe', 'Debitis dolores eligendi eaque nihil praesentium libero recusandae! Illum', 0);
+insert into simple_people (name, details, points) values ('Karen', 'Lorem accusamus doloribus ipsum inventore illo ea incidunt Provident eligendi aperiam obcaecati architecto unde', 2);
+insert into simple_people (name, details, points) values ('George', 'Corrupti maxime molestiae optio voluptatibus ad vitae dolor unde Assumenda', 5);
+insert into simple_people (name, details, points) values ('Kyle', 'obcaecati tempora Alias officia doloremque dolorem consectetur quasi Pariatur illo similique', 10);
+
 -- weekId = 1
 -- month = "Feb"
 -- days = (1..28)

@@ -5,14 +5,87 @@ module.exports = function(server) {
   //   console.log("added: " + user);
   // });
   
+  var activeUsers = {}
+  
   io.on('connection', function(socket){
     console.log('a user connected');
 
+    socket.on('disconnect', function(){
+
+      // socket.broadcast.to(roomName).emit('user_leave', {user_name: "johnjoe123"});
+      // io.emit('user_leave', {user_name: "johnjoe123"});
+    });
+        
     socket.on('emit_method', function(msg){
       console.log("received 'emit_method' with: " + JSON.stringify(msg));
       io.emit('got_it', msg);
     });
 
+    socket.on('login', function(person, callback){
+      console.log("logging in: " + person);
+      activeUsers[person] = true;
+      io.emit(callback, {person: person, activeUsers:activeUsers});
+    });
+
+    socket.on('logout', function(person, callback){
+      console.log("logging out: " + person);
+      delete activeUsers[person]; 
+      io.emit(callback, {person: person, activeUsers:activeUsers});
+    });
+
+    // simple_people
+
+    socket.on('fetch_people', function(callback){
+      if (typeof callback === 'undefined')
+        callback = 'people_fetched';
+
+      new models.SimplePerson().fetchAll().then((collection) => {
+      // models.Day.where({month: month_id}).fetchAll().then((collection) => {
+        io.emit(callback, {action: 'index', type: 'simple_person', collection: collection, callback: callback});
+      })
+    });
+      
+    socket.on('fetch_person', function(person, callback){
+      if (typeof callback === 'undefined')
+        callback = 'person_fetched';
+
+      new models.SimplePerson({id: person.id}).fetch().then((model) => {
+        io.emit(callback, {action: 'get', type: 'simple_person', model: model});
+      })
+    });
+      
+    socket.on('create_person', function(person, callback){
+      if (typeof callback === 'undefined')
+        callback = 'person_created';
+
+      new models.SimplePerson().save(person).then((model) => {
+        io.emit(callback, {action: 'create', type: 'simple_person', model: model});
+      })
+    });
+      
+    socket.on('update_person', function(person, callback){
+      console.log(person);
+      if (typeof callback === 'undefined')
+        callback = 'person_updated';
+
+      new models.SimplePerson({id: person.id}).save(person).then((model) => {
+        io.emit(callback, {action: 'update', type: 'simple_person', model: model});
+      })
+    });
+      
+    socket.on('destroy_person', function(person, callback){
+      if (typeof callback === 'undefined')
+        callback = 'person_destroyed';
+
+      var _model = null;
+      new models.SimplePerson({id: person.id}).fetch()
+      .then((model) => { _model = model; return new models.SimplePerson({id: person.id}).destroy() })
+      .then(() => {
+        io.emit(callback, {action: 'destroy', type: 'simple_person', model: _model});
+      })
+    });
+    
+    
     // users
 
     socket.on('fetch_user', function(user){
